@@ -23,8 +23,9 @@ public class DeliveryCardTest {
             $("[data-test-id=date] input").doubleClick().sendKeys(Keys.BACK_SPACE);
             $("[data-test-id='date'] input").sendKeys(currentDate);
             $("[data-test-id='name'] input").setValue("Алла-Виктория");
-            $("[data-tes-id='phone' input").setValue("+79267098757");
+            $("[data-test-id='phone'] input").setValue("+79267098757");
             $("[data-test-id='agreement']").click();
+            $(".button__content").click();
             $(".notification__content").shouldBe(Condition.visible, Duration.ofSeconds(15)).shouldHave(Condition.exactText("Встреча успешно забронирована на " + currentDate));
         }
 
